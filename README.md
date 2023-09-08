@@ -1,4 +1,4 @@
-# Native Page Transitions With SvelteKit Using The View Transitions API
+# Native Page Transitions With SvelteKit
 
 Learn how to animate state and page transitions with ease using the View Transitions API.
 
