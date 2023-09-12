@@ -1,4 +1,7 @@
 <script lang="ts">
+	import Loading from './loading.svelte'
+	import Success from './success.svelte'
+
 	type State = 'idle' | 'loading' | 'success' | 'error'
 	let state: State = 'idle'
 
@@ -26,35 +29,10 @@
 	{#if state === 'idle'}
 		Make reservation
 	{:else if state === 'loading'}
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			stroke-width="2"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			class="loading"
-		>
-			<path d="M21 12a9 9 0 1 1-6.219-8.56" />
-		</svg>
+		<Loading />
 		Making reservation...
 	{:else if state === 'success'}
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			stroke-width="2"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-		>
-			<polyline points="20 6 9 17 4 12" />
-		</svg>
+		<Success />
 		Your ticket has been reserved
 	{:else if state === 'error'}
 		No tickets available
@@ -99,15 +77,5 @@
 		&[data-state='error'] {
 			--background: hsl(9 40% 28%);
 		}
-	}
-
-	@keyframes loading {
-		to {
-			rotate: 1turn;
-		}
-	}
-
-	.loading {
-		animation: loading 1s infinite;
 	}
 </style>

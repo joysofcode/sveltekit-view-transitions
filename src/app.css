@@ -29,10 +29,15 @@ body {
 }
 
 body {
+	padding-inline: 2rem;
 	color: hsl(220 40% 98%);
 	font-family: 'Space Mono', sans-serif;
 	background-image: radial-gradient(hsl(220 40% 8%), hsl(220 40% 4%));
 	overflow-y: scroll;
+
+	@media (min-width: 1024px) {
+		padding-inline: 0;
+	}
 }
 
 h1 {

@@ -12,6 +12,8 @@
 {#if planet}
 	<div class="container">
 		<div class="description">
+			<img src={planet.image} alt={planet.name} style:--planet="image-{planet.name}" />
+
 			<h1 style:--title="title-{planet.name}">{planet.name}</h1>
 
 			<p>{planet.description}</p>
@@ -29,24 +31,34 @@
 				{/if}
 			</div>
 		</div>
-
-		<img src={planet.image} alt={planet.name} style:--planet="image-{planet.name}" />
 	</div>
 {/if}
 
 <style>
 	.container {
-		display: grid;
-		grid-template-columns: 50ch 1fr;
-		max-width: 1024px;
-		margin-top: 12rem;
-		margin-inline: auto;
+		@media (min-width: 800px) {
+			max-width: 1024px;
+			position: relative;
+			display: grid;
+			grid-template-columns: 50ch 1fr;
+			margin-top: 12rem;
+			margin-inline: auto;
+		}
 
 		& img {
 			width: 100%;
-			height: 100%;
-			scale: 1.4;
-			z-index: -1;
+			margin-block: 4rem;
+
+			@media (min-width: 800px) {
+				width: auto;
+				margin: 0;
+
+				position: absolute;
+				scale: 1.4;
+				right: 0px;
+				z-index: -1;
+			}
+
 			view-transition-name: var(--planet);
 		}
 	}
