@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Loading from './loading.svelte'
-	import Success from './success.svelte'
+	import LoadingIcon from './loading.svelte'
+	import CheckIcon from './check.svelte'
 
 	type State = 'idle' | 'loading' | 'success' | 'error'
 	let state: State = 'idle'
@@ -32,10 +32,10 @@
 	{#if state === 'idle'}
 		Make reservation
 	{:else if state === 'loading'}
-		<Loading />
+		<LoadingIcon />
 		Making reservation...
 	{:else if state === 'success'}
-		<Success />
+		<CheckIcon />
 		Your ticket has been reserved
 	{:else if state === 'error'}
 		No tickets available

@@ -48,18 +48,16 @@
 		& img {
 			width: 100%;
 			margin-block: 4rem;
+			view-transition-name: var(--planet);
 
 			@media (min-width: 800px) {
+				position: absolute;
 				width: auto;
 				margin: 0;
-
-				position: absolute;
 				scale: 1.4;
 				right: 0px;
 				z-index: -1;
 			}
-
-			view-transition-name: var(--planet);
 		}
 	}
 
