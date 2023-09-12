@@ -4,7 +4,10 @@
 
 	function transition(action: () => void) {
 		// @ts-ignore
-		if (!document.startViewTransition) return
+		if (!document.startViewTransition) {
+			action()
+			return
+		}
 		// @ts-ignore
 		document.startViewTransition(action)
 	}
